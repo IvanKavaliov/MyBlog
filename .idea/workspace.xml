@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="84d0e8ea-fed0-49d9-bbdd-627db5da2e3f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/MyBlog.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyBlog.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6b4e54e8-e2c7-4168-8be2-1de614ceada8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6b4e54e8-e2c7-4168-8be2-1de614ceada8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blog/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +149,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/work/Base/project/antiplagiarism/MyBlog",
+    "last_opened_file_path": "C:/work/Base/project/antiplagiarism/MyBlog/Blog",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -164,6 +172,11 @@
       <workItem from="1661196052125" duration="2073000" />
       <workItem from="1661201291535" duration="375000" />
       <workItem from="1661203382339" duration="1602000" />
+      <workItem from="1677694497129" duration="505000" />
+      <workItem from="1677695010169" duration="144000" />
+      <workItem from="1677695294515" duration="416000" />
+      <workItem from="1677695798358" duration="3512000" />
+      <workItem from="1680003125823" duration="2077000" />
     </task>
     <servers />
   </component>
@@ -180,19 +193,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1661198487170">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="275" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1661198487170" />
-    <state x="428" y="165" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1661198297613">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="428" y="165" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1661198297613" />
-    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1661198421775">
-      <screen x="0" y="0" width="1366" height="728" />
-    </state>
-    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1661198421775" />
   </component>
 </project>

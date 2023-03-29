@@ -26,10 +26,14 @@
             <!-- Small boxes (Stat box) -->
             <div class="row">
                 <div class="col-12">
-                    <form action="#" class="w-25">
+                    <form action="{{ route('admin.category.store') }}" method="POST" class="w-25">
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Name of category">
+                            <input type="text" class="form-control" name="title" placeholder="Name of category">
                         </div>
+                        @error('title')
+                            <div class="text-danger">Field must be filled</div>
+                        @enderror
                         <input type="submit" class="btn btn-primary w-50" value="Add">
                     </form>
                 </div>
