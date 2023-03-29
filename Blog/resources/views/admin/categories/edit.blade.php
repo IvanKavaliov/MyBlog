@@ -6,9 +6,8 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6 d-flex align-items-center">
-                    <h1 class="m-0 mr-2">{{ $category->title }}</h1>
-                    <a href="{{ route('admin.category.edit', $category->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a>
+                <div class="col-sm-6">
+                    <h1 class="m-0">Edit a category</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -24,24 +23,21 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <!-- Small boxes (Stat box) -->
             <div class="row">
-                <div class="col-6">
-                    <div class="card">
-                        <div class="card-body table-responsive p-0">
-                            <table class="table table-hover text-nowrap">
-                                <tbody>
-                                <tr>
-                                    <td>Id</td>
-                                    <td>{{ $category->id }}</td>
-                                </tr>
-                                <tr>
-                                    <td>Title</td>
-                                    <td>{{ $category->title }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
+                <div class="col-12">
+                    <form action="{{ route('admin.category.update', $category->id) }}" method="POST" class="w-25">
+                        @csrf
+                        @method('PATCH')
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="title" placeholder="Name of category"
+                            value="{{ $category->title }}">
                         </div>
-                    </div>
+                        @error('title')
+                            <div class="text-danger">Field must be filled</div>
+                        @enderror
+                        <input type="submit" class="btn btn-warning w-50" value="Update">
+                    </form>
                 </div>
             </div>
             <!-- /.row -->
