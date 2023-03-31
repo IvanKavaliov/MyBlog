@@ -38,7 +38,7 @@
                         <div class="form-group">
                             <textarea id="summernote" name="content"> {{old('content')}} </textarea>
                             @error('content')
-                            <div class="text-danger">Field must be filled</div>
+                                <div class="text-danger">Field must be filled</div>
                             @enderror
                         </div>
                         <div class="form-group w-50">
@@ -52,6 +52,9 @@
                                     <span class="input-group-text">Upload</span>
                                 </div>
                             </div>
+                            @error('preview_image')
+                                <div class="text-danger">Field must be filled</div>
+                            @enderror
                         </div>
                         <div class="form-group w-50">
                             <label for="exampleInputFile">Add main preview</label>
@@ -64,6 +67,18 @@
                                     <span class="input-group-text">Upload</span>
                                 </div>
                             </div>
+                            @error('main_image')
+                                <div class="text-danger">Field must be filled</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-50">
+                            <label>Choose category</label>
+                            <select name="category_id" class="form-control">
+                                @foreach($categories as $category)
+                                    {{ $category->id == old($category->id) ? ' selected' : ''}}
+                                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-primary w-25" value="Add">
