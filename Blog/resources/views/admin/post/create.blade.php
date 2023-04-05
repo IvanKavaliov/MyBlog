@@ -52,9 +52,6 @@
                                     <span class="input-group-text">Upload</span>
                                 </div>
                             </div>
-                            @error('preview_image')
-                                <div class="text-danger">Field must be filled</div>
-                            @enderror
                         </div>
                         <div class="form-group w-50">
                             <label for="exampleInputFile">Add main preview</label>
@@ -67,9 +64,6 @@
                                     <span class="input-group-text">Upload</span>
                                 </div>
                             </div>
-                            @error('main_image')
-                                <div class="text-danger">Field must be filled</div>
-                            @enderror
                         </div>
                         <div class="form-group w-50">
                             <label>Choose category</label>
