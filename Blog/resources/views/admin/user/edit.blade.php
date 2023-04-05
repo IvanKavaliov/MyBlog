@@ -32,10 +32,17 @@
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="Name of user"
                             value="{{ $user->name }}">
+                            @error('name')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
                         </div>
-                        @error('name')
-                            <div class="text-danger">Field must be filled</div>
-                        @enderror
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email of user"
+                            value="{{ $user->email }}">
+                            @error('email')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <input type="submit" class="btn btn-warning w-50" value="Update">
                     </form>
                 </div>

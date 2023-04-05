@@ -46,12 +46,12 @@
                                 <tbody>
                                 @foreach($users as $user)
                                 <tr>
-                                    <td>{{ $uses->id }}</td>
-                                    <td>{{ $uses->name }}</td>
-                                    <td><a href="{{ route('admin.category.show', $uses->id) }}"><i class="far fa-eye"></i></a></td>
-                                    <td><a href="{{ route('admin.category.edit', $uses->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td><a href="{{ route('admin.user.show', $user->id) }}"><i class="far fa-eye"></i></a></td>
+                                    <td><a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="fas fa-pencil-alt"></i></a></td>
                                     <td>
-                                        <form action="{{ route('admin.category.delete', $uses->id) }}" method="POST">
+                                        <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="border-0 bg-transparent">

@@ -24,7 +24,20 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title' => 'required|string'
+            'name' => 'required|string',
+            'email' => 'required|string|email|unique:users',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'This field is required',
+            'name.string' => 'The data must match the string',
+            'email.required' => 'This field is required',
+            'email.string' => 'The data must match the string',
+            'email.email' => 'Your mail must match the format mail@some.domain',
+            'email.unique' => 'User with this email exists',
         ];
     }
 }
