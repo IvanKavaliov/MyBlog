@@ -14,12 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['namespace' => '\App\Http\Controllers\Main'], function () {
-    Route::get('/', IndexController::class);
+    Route::get('/', IndexController::class)->name('main.index');
 });
 
-Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin'], function () {
+Route::group(['namespace' => '\App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
+    Route::group(['namespace' => 'Main', 'prefix' => 'main'], function () {
+        Route::get('/', IndexController::class)->name('personal.main.index');
+    });
+    Route::group(['namespace' => 'Liked', 'prefix' => 'liked'], function () {
+        Route::get('/', IndexController::class)->name('personal.liked.index');
+        Route::delete('/{post}', DeleteController::class)->name('personal.liked.delete');
+    });
+    Route::group(['namespace' => 'Comment', 'prefix' => 'comment'], function () {
+        Route::get('/', IndexController::class)->name('personal.comment.index');
+        Route::get('/{comment}/edit', EditController::class)->name('personal.comment.edit');
+        Route::patch('/{comment}', UpdateController::class)->name('personal.comment.update');
+        Route::delete('/{comment}', DeleteController::class)->name('personal.comment.delete');
+    });
+});
+
+Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin', 'middleware' => ['auth','admin','verified']], function () {
     Route::group(['namespace' => 'Main'], function () {
-        Route::get('/', IndexController::class);
+        Route::get('/', IndexController::class)->name('admin.main.index');
     });
 
     Route::group(['namespace' => 'Post', 'prefix' => 'posts'], function () {
@@ -63,5 +79,5 @@ Route::group(['namespace' => '\App\Http\Controllers\Admin', 'prefix' => 'admin']
     });
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 

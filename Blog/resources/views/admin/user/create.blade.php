@@ -11,8 +11,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">Users</a></li>
+                        <li class="breadcrumb-item active">Adding an user</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -40,9 +41,16 @@
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="password" placeholder="Password of user">
-                            @error('password')
+                        <div class="form-group w-50">
+                            <label>Choose role</label>
+                            <select name="role" class="form-control">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"
+                                    {{ $id == old('role_id') ? ' selected' : ''}}>
+                                    {{ $role }}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>

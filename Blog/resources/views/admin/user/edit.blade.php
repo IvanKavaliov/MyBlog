@@ -11,8 +11,9 @@
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Dashboard v1</li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.main.index') }}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">Users</a></li>
+                        <li class="breadcrumb-item active">Edit an user</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -42,6 +43,22 @@
                             @error('email')
                             <div class="text-danger">{{ $message }}</div>
                             @enderror
+                        </div>
+                        <div class="form-group w-50">
+                            <label>Choose role</label>
+                            <select name="role" class="form-control">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"
+                                    {{ $id == $user->role ? ' selected' : ''}}>
+                                    {{ $role }}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <div class="form-group w-50">
+                            <input type="hidden" name="user_id" value="{{ $user->id }}">
                         </div>
                         <input type="submit" class="btn btn-warning w-50" value="Update">
                     </form>
