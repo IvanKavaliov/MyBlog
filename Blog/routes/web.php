@@ -20,6 +20,10 @@ Route::group(['namespace' => '\App\Http\Controllers\Main'], function () {
 Route::group(['namespace' => '\App\Http\Controllers\Post', 'prefix' => 'posts'], function () {
     Route::get('/', IndexController::class)->name('post.index');
     Route::get('/{post}', ShowController::class)->name('post.show');
+
+    Route::group(['namespace' => 'Comment', 'prefix' => '{post}/comments'], function () {
+        Route::post('/', 'StoreController')->name('post.comment.store');
+    });
 });
 
 Route::group(['namespace' => '\App\Http\Controllers\Personal', 'prefix' => 'personal', 'middleware' => ['auth', 'verified']], function () {
